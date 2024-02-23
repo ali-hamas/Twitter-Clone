@@ -13,6 +13,7 @@
   --blueColor: #1d9bf0;
   --hoverBlue: #1b8cd8;
   --lightGrey: #71767b;
+  --secondryBackground: #16181c;
 }
 .app {
   width: 100%;
@@ -64,7 +65,11 @@ img.user-img {
   text-align: center;
   border-radius: 50%;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 .three-dots:hover {
-  background-color: var(--hoverBlue);
+  background-color: #000;
+}
+input::placeholder {
+  color: var(--lightGrey);
 }
