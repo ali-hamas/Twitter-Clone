@@ -1,16 +1,70 @@
 * {
   margin: 0;
   padding: 0;
-  color: #fff;
+  box-sizing: border-box;
+  color: var(--whiteColor);
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+:root {
+  --whiteColor: #e7e9ea;
+  --hoverColor: #181818;
+  --blueColor: #1d9bf0;
+  --hoverBlue: #1b8cd8;
+  --lightGrey: #71767b;
 }
 .app {
   width: 100%;
   height: 100vh;
-  background-color: #000000;
+  display: flex;
 }
 
 .left {
   width: 25%;
   height: 100vh;
+  user-select: none;
+}
+.center {
   border-right: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  width: 600px;
+  margin: 0 auto;
+}
+.right {
+  width: 33%;
+  height: 100vh;
+}
+
+/* Utility Classes */
+.btn {
+  padding: 7px 20px;
+  background-color: var(--blueColor);
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--hoverBlue);
+}
+img.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.three-dots {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+.three-dots:hover {
+  background-color: var(--hoverBlue);
 }

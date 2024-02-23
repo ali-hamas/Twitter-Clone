@@ -1,0 +1,138 @@
+.navbar {
+  width: 100%;
+  position: relative;
+}
+.navbar nav {
+  width: 270px;
+  margin-left: auto;
+}
+.logo i {
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+.logo i:hover {
+  background-color: var(--hoverColor);
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+}
+nav ul li {
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+}
+nav ul li:hover .nav-item {
+  background-color: var(--hoverColor);
+}
+nav ul li .nav-item {
+  border-radius: 999px;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  transition: 0.2s ease;
+}
+.nav-icons {
+  font-size: 24px;
+}
+.nav-name {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.more-nav-item {
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 12px 16px;
+  transition: 0.2s ease;
+}
+.more-nav-item:nth-child(2) {
+  border-bottom: 1px solid #2f3336;
+}
+.space-between {
+  justify-content: space-between;
+}
+.more-nav-item:hover {
+  background-color: var(--hoverColor);
+}
+button.post-btn {
+  width: 90%;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+.user-item {
+  margin-top: 10px;
+  width: 100%;
+  position: relative;
+}
+#user-item-inner {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+#user-item-inner:hover {
+  background-color: var(--hoverColor);
+}
+.user-details {
+  margin-left: 15px;
+}
+.user-details .name {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.user-details .user-name {
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--lightGrey);
+}
+/* user box */
+.user-box {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+  width: 330px;
+  padding: 10px 0;
+  border-radius: 10px;
+  background-color: #000000;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+    rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
+.user-box .user-box-slot {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.user-box .user-box-slot:hover {
+  background-color: var(--hoverColor);
+}
+
+.more-box {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 330px;
+  border-radius: 10px;
+  background-color: #000000;
+  box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 15px,
+    rgba(255, 255, 255, 0.15) 0px 0px 3px 1px;
+}
