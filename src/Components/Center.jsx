@@ -54,6 +54,7 @@ export default function Center(props) {
     </div>
   </div>`;
     document.getElementById("tweet-textarea").value = "";
+    document.querySelector(".tweet-btn").setAttribute("disabled", "true");
   };
   return (
     <div>
@@ -72,7 +73,7 @@ export default function Center(props) {
             <textarea
               id="tweet-textarea"
               rows={4}
-              maxLength={200}
+              maxLength={270}
               placeholder="What is happening?!"
               onInput={tweetInput}
             ></textarea>

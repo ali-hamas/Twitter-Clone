@@ -44,7 +44,7 @@ form.tweet-form #tweet-textarea {
   outline: none;
   border: none;
   background-color: #000;
-  font-size: 16px;
+  font-size: 14px;
   border-bottom: 1px solid var(--borderColor);
   resize: none;
   padding-bottom: 5px;
