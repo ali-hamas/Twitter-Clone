@@ -22,7 +22,7 @@ function App() {
           <Left name="Ali Hamas" username="@ali_hamas" />
         </div>
         <div className="center">
-          <Center />
+          <Center name="Ali Hamas" username="@ali_hamas" />
         </div>
         <div className="right">
           <Right />
