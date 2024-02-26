@@ -1,12 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import "./center.css";
 
 export default function Center(props) {
-  const tweetInput = () => {
-    document.getElementById("tweet-textarea").value.length > 0
-      ? document.querySelector(".tweet-btn").removeAttribute("disabled")
-      : document.querySelector(".tweet-btn").setAttribute("disabled", "true");
-  };
   const newTweet = (event) => {
     event.preventDefault();
     let textareaValue = document.getElementById("tweet-textarea").value;
@@ -56,6 +51,27 @@ export default function Center(props) {
     document.getElementById("tweet-textarea").value = "";
     document.querySelector(".tweet-btn").setAttribute("disabled", "true");
   };
+
+  const tweetInput = () => {
+    document.getElementById("tweet-textarea").value.length > 0
+      ? document.querySelector(".tweet-btn").removeAttribute("disabled")
+      : document.querySelector(".tweet-btn").setAttribute("disabled", "true");
+
+    document.getElementById("tweet-textarea").value.length > 0
+      ? (document.querySelector(".tweet-words").style.display = "block")
+      : (document.querySelector(".tweet-words").style.display = "none");
+
+    tweet.split(" ").length > 150
+      ? (document.querySelector(".tweet-words").style.background = "#dc3545")
+      : (document.querySelector(".tweet-words").style.background =
+          "var(--blueColor)");
+  };
+
+  let [tweet, tweetValue] = useState("");
+
+  const change = (e) => {
+    tweetValue(e.target.value);
+  };
   return (
     <div>
       <div className="center-div">
@@ -69,13 +85,14 @@ export default function Center(props) {
             src="https://alihamas.vercel.app/images/favicon.png"
             className="user-img"
           />
-          <form className="tweet-form" onSubmit={newTweet}>
+          <form className="tweet-form" onSubmit={newTweet} spellCheck="false">
             <textarea
               id="tweet-textarea"
               rows={4}
-              maxLength={270}
+              value={tweet}
               placeholder="What is happening?!"
               onInput={tweetInput}
+              onChange={change}
             ></textarea>
             <div className="tweet-form-buttons">
               <i class="fa-regular fa-image"></i>
@@ -83,6 +100,7 @@ export default function Center(props) {
               <i class="fa-solid fa-calendar-days"></i>
               <i class="fa-regular fa-face-smile"></i>
               <i class="fa-solid fa-location-dot"></i>
+              <span className="tweet-words">{tweet.split(" ").length}</span>
               <button type="sumbit" className="btn tweet-btn" disabled>
                 Post
               </button>
