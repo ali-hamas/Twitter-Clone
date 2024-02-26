@@ -4,55 +4,62 @@ import "./center.css";
 export default function Center(props) {
   const newTweet = (event) => {
     event.preventDefault();
-    let textareaValue = document.getElementById("tweet-textarea").value;
-    let formatTextareaValue = textareaValue.replace(/\n/g, "<br>");
-    let newTweetDiv = document.createElement("div");
-    document.querySelector(".tweets-box").prepend(newTweetDiv);
-    newTweetDiv.classList.add("tweet");
-    newTweetDiv.innerHTML = `<img
-    src="https://alihamas.vercel.app/images/favicon.png"
-    class="user-img"
-  />
-  <div class="tweet-content">
-    <div class="tweet-head">
+    if (tweet.split(" ").length < 101) {
+      let textareaValue = document.getElementById("tweet-textarea").value;
+      let formatTextareaValue = textareaValue.replace(/\n/g, "<br>");
+      let newTweetDiv = document.createElement("div");
+      document.querySelector(".tweets-box").prepend(newTweetDiv);
+      newTweetDiv.classList.add("tweet");
+      newTweetDiv.innerHTML = `<img
+      src="https://alihamas.vercel.app/images/favicon.png"
+      class="user-img"
+      />
+      <div class="tweet-content">
+      <div class="tweet-head">
       <span class="name">${props.name}</span>
       <i class="fa-solid fa-circle-check"></i>
       <span class="username">${props.username}</span>
       <span class="time">1s</span>
-    </div>
-    <div class="tweet-text">
+      </div>
+      <div class="tweet-text">
       ${formatTextareaValue}
-    </div>
-    <div class="tweet-buttons">
+      </div>
+      <div class="tweet-buttons">
       <div class="tweet-button-box comment-box">
-        <i class="fa-regular fa-comment"></i>
-        <div class="tweet-buttons-numbers">0</div>
+      <i class="fa-regular fa-comment"></i>
+      <div class="tweet-buttons-numbers">0</div>
       </div>
       <div class="tweet-button-box retweeet-box">
-        <i class="fa-solid fa-retweet"></i>
-        <div class="tweet-buttons-numbers retweet-numbers">0</div>
+      <i class="fa-solid fa-retweet"></i>
+      <div class="tweet-buttons-numbers retweet-numbers">0</div>
       </div>
       <div class="tweet-button-box like-box">
-        <i class="fa-regular fa-heart"></i>
-        <div class="tweet-buttons-numbers like-numbers">0</div>
+      <i class="fa-regular fa-heart"></i>
+      <div class="tweet-buttons-numbers like-numbers">0</div>
       </div>
       <div class="tweet-button-box impression-box">
-        <i class="fa-solid fa-chart-simple"></i>
-        <div class="tweet-buttons-numbers">1</div>
+      <i class="fa-solid fa-chart-simple"></i>
+      <div class="tweet-buttons-numbers">1</div>
       </div>
       <div class="tweet-button-box bookmark-box">
-        <i class="fa-regular fa-bookmark"></i>
+      <i class="fa-regular fa-bookmark"></i>
       </div>
       <div class="tweet-button-box share-box">
-        <i class="fa-solid fa-arrow-up-from-bracket"></i>
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
       </div>
-    </div>
-  </div>`;
-    document.getElementById("tweet-textarea").value = "";
-    document.querySelector(".tweet-btn").setAttribute("disabled", "true");
+      </div>
+      </div>`;
+      document.getElementById("tweet-textarea").value = "";
+      document.querySelector(".tweet-btn").setAttribute("disabled", "true");
+      document.querySelector(".tweet-words").style.display = "none";
+    }
   };
 
-  const tweetInput = () => {
+  let [tweet, tweetValue] = useState("");
+
+  const change = (e) => {
+    tweetValue(e.target.value);
+
     document.getElementById("tweet-textarea").value.length > 0
       ? document.querySelector(".tweet-btn").removeAttribute("disabled")
       : document.querySelector(".tweet-btn").setAttribute("disabled", "true");
@@ -61,16 +68,12 @@ export default function Center(props) {
       ? (document.querySelector(".tweet-words").style.display = "block")
       : (document.querySelector(".tweet-words").style.display = "none");
 
-    tweet.split(" ").length > 150
+    tweet.split(" ").length > 100
       ? (document.querySelector(".tweet-words").style.background = "#dc3545")
       : (document.querySelector(".tweet-words").style.background =
           "var(--blueColor)");
-  };
 
-  let [tweet, tweetValue] = useState("");
-
-  const change = (e) => {
-    tweetValue(e.target.value);
+    // tweet.split(" ").length = 100 ? tweetValue() : tweetValue(e.target.value);
   };
   return (
     <div>
@@ -91,7 +94,6 @@ export default function Center(props) {
               rows={4}
               value={tweet}
               placeholder="What is happening?!"
-              onInput={tweetInput}
               onChange={change}
             ></textarea>
             <div className="tweet-form-buttons">

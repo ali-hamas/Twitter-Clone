@@ -48,6 +48,7 @@ form.tweet-form #tweet-textarea {
   border-bottom: 1px solid var(--borderColor);
   resize: none;
   padding-bottom: 5px;
+  scrollbar-width: none;
 }
 form.tweet-form .tweet-form-buttons {
   display: flex;
