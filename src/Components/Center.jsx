@@ -127,50 +127,7 @@ export default function Center(props) {
                 Deserunt voluptatibus at minima. Nam ipsa tempore, corrupti
                 consequatur quis id quo natus modi deserunt ipsam alias soluta
                 libero, sed placeat officia. Minima aliquam magnam sed!
-              </div>
-              <div className="tweet-buttons">
-                <div className="tweet-button-box comment-box">
-                  <i class="fa-regular fa-comment"></i>
-                  <div className="tweet-buttons-numbers">2k</div>
-                </div>
-                <div className="tweet-button-box retweeet-box">
-                  <i class="fa-solid fa-retweet"></i>
-                  <div className="tweet-buttons-numbers retweet-numbers">2</div>
-                </div>
-                <div className="tweet-button-box like-box">
-                  <i class="fa-regular fa-heart"></i>
-                  <div className="tweet-buttons-numbers like-numbers">2</div>
-                </div>
-                <div className="tweet-button-box impression-box">
-                  <i class="fa-solid fa-chart-simple"></i>
-                  <div className="tweet-buttons-numbers">2k</div>
-                </div>
-                <div className="tweet-button-box bookmark-box">
-                  <i class="fa-regular fa-bookmark"></i>
-                </div>
-                <div className="tweet-button-box share-box">
-                  <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="tweet">
-            <img
-              src="https://alihamas.vercel.app/images/favicon.png"
-              className="user-img"
-            />
-            <div className="tweet-content">
-              <div className="tweet-head">
-                <span className="name">{props.name}</span>
-                <i class="fa-solid fa-circle-check"></i>
-                <span className="username">{props.username}</span>
-                <span className="time">1s</span>
-              </div>
-              <div className="tweet-text">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt voluptatibus at minima. Nam ipsa tempore, corrupti
-                consequatur quis id quo natus modi deserunt ipsam alias soluta
-                libero, sed placeat officia. Minima aliquam magnam sed!
+                <img src="https://images.unsplash.com/photo-1566438480900-0609be27a4be?q=80&w=2794&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
               </div>
               <div className="tweet-buttons">
                 <div className="tweet-button-box comment-box">

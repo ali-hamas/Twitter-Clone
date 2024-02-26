@@ -126,6 +126,13 @@ form.tweet-form .tweet-form-buttons {
   font-size: 14px;
   width: 100%;
 }
+.tweet-text img {
+  width: 100%;
+  max-height: 500px;
+  margin-top: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
 .tweet-content .tweet-buttons {
   margin-top: 8px;
   display: flex;
