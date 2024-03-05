@@ -1,6 +1,7 @@
 .navbar {
   width: 100%;
-  position: relative;
+  height: 100vh;
+  overflow: auto;
 }
 .navbar nav {
   width: 270px;
@@ -46,6 +47,9 @@ nav ul li .nav-item {
 .nav-name {
   font-size: 20px;
   line-height: 24px;
+  font-weight: 400;
+}
+.nav-name.active {
   font-weight: 500;
 }
 .more-nav-item {
@@ -71,10 +75,10 @@ button.post-btn {
   padding: 10px 20px;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .user-item {
-  margin-top: 10px;
+  margin-top: 30px;
   width: 100%;
   position: relative;
 }
@@ -105,7 +109,6 @@ button.post-btn {
 }
 /* user box */
 .user-box {
-  display: none;
   position: absolute;
   bottom: 70px;
   left: 0;
@@ -126,9 +129,8 @@ button.post-btn {
 }
 
 .more-box {
-  display: none;
   position: absolute;
-  bottom: 0px;
+  bottom: 55px;
   left: 0;
   width: 330px;
   border-radius: 10px;

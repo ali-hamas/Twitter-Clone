@@ -1,15 +1,40 @@
-import React from "react";
-import "./left.css";
+import React, { useState } from "react";
+import "./navbar.css";
 
-export default function Left(props) {
-  const showUserBox = () => {
-    document.querySelector(".user-box").style.display = "block";
-  };
-  const showMoreBox = () => {
-    document.querySelector(".more-box").style.display = "block";
+const Navbar = (props) => {
+  const [AccountInfo, setAccountInfo] = useState(false);
+  const [MoreBox, setMoreBox] = useState(false);
+
+  const MoreBoxComponent = () => {
+    return (
+      <>
+        <div className="more-box">
+          <a className="more-nav-item">
+            <i class="fa-regular fa-bookmark nav-icons"></i>
+            <div className="nav-name">Bookmarks</div>
+          </a>
+          <a className="more-nav-item">
+            <i class="fa-solid fa-money-bill nav-icons"></i>
+            <div className="nav-name">Monetization</div>
+          </a>
+          <a className="more-nav-item space-between">
+            <div>Creator Studio</div>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <a className="more-nav-item space-between">
+            <div>Professional Tools</div>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+          <a className="more-nav-item space-between">
+            <div>Setting and Support</div>
+            <i class="fa-solid fa-chevron-down"></i>
+          </a>
+        </div>
+      </>
+    );
   };
   return (
-    <div>
+    <>
       <div className="navbar">
         <nav>
           <a className="logo">
@@ -19,7 +44,7 @@ export default function Left(props) {
             <li>
               <a className="nav-item">
                 <i class="fa-solid fa-house nav-icons"></i>
-                <div className="nav-name">Home</div>
+                <div className="nav-name active">Home</div>
               </a>
             </li>
             <li>
@@ -65,38 +90,28 @@ export default function Left(props) {
               </a>
             </li>
             <li>
-              <a className="nav-item" id="more-item" onClick={showMoreBox}>
+              <a
+                className="nav-item"
+                id="more-item"
+                onClick={() => {
+                  setMoreBox(!MoreBox);
+                }}
+              >
                 <i class="fa-solid fa-ellipsis nav-icons"></i>
                 <div className="nav-name">More</div>
               </a>
-              <div className="more-box">
-                <a className="more-nav-item">
-                  <i class="fa-regular fa-bookmark nav-icons"></i>
-                  <div className="nav-name">Bookmarks</div>
-                </a>
-                <a className="more-nav-item">
-                  <i class="fa-solid fa-money-bill nav-icons"></i>
-                  <div className="nav-name">Monetization</div>
-                </a>
-                <a className="more-nav-item space-between">
-                  <div>Creator Studio</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <a className="more-nav-item space-between">
-                  <div>Professional Tools</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-                <a className="more-nav-item space-between">
-                  <div>Setting and Support</div>
-                  <i class="fa-solid fa-chevron-down"></i>
-                </a>
-              </div>
+              {MoreBox && <MoreBoxComponent />}
             </li>
           </ul>
           <button className="btn post-btn">Post</button>
-          {/* User Item */}
           <div className="user-item">
-            <div id="user-item-inner" onClick={showUserBox}>
+            <div
+              id="user-item-inner"
+              onClick={() => {
+                console.log("first");
+                setAccountInfo(!AccountInfo);
+              }}
+            >
               <img
                 src="https://alihamas.vercel.app/images/favicon.png"
                 className="user-img"
@@ -107,13 +122,17 @@ export default function Left(props) {
               </div>
               <i class="fa-solid fa-ellipsis three-dots"></i>
             </div>
-            <div className="user-box">
-              <div className="user-box-slot">Add an existing account</div>
-              <div className="user-box-slot">Log out {props.username}</div>
-            </div>
+            {AccountInfo && (
+              <div className="user-box">
+                <div className="user-box-slot">Add an existing account</div>
+                <div className="user-box-slot">Log out {props.username}</div>
+              </div>
+            )}
           </div>
         </nav>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Navbar;

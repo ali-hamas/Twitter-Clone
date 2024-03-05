@@ -1,0 +1,8 @@
+.subscribe-component {
+  padding: 12px 16px;
+}
+.subscribe-component .subscribe-text {
+  margin-top: 10px;
+  font-size: 15px;
+  margin-bottom: 10px;
+}

@@ -1,13 +1,90 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--whiteColor);
+  font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  background-color: #000000;
+}
+:root {
+  --whiteColor: #e7e9ea;
+  --hoverColor: #181818;
+  --blueColor: #1d9bf0;
+  --hoverBlue: #1b8cd8;
+  --lightGrey: #71767b;
+  --secondryBackground: #16181c;
+  --borderColor: #2f3336;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.component {
+  background-color: var(--secondryBackground);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.component-heading {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.btn {
+  padding: 7px 20px;
+  color: var(--whiteColor);
+  background-color: var(--blueColor);
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn:hover {
+  background-color: var(--hoverBlue);
+}
+.btn:disabled {
+  background-color: #134e79;
+  color: #ccc;
+  padding: 7px 20px;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 9999px;
+  text-align: center;
+  cursor: default;
+}
+.btn:disabled:hover {
+  background-color: #134e79;
+}
+img.user-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.three-dots {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.three-dots:hover {
+  background-color: #000;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--lightGrey);
+}
+input[type="file"] {
+  display: none;
+}
+input[type="checkbox"] {
+  display: none;
 }

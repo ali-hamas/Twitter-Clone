@@ -1,0 +1,21 @@
+.trend-heading {
+  padding: 12px 16px;
+}
+.trend {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.trend:hover {
+  background-color: #1d1f23;
+}
+.trend .trend-type,
+.trend .trend-number {
+  font-size: 12px;
+  color: var(--lightGrey);
+}
+.trend .trend-name {
+  font-size: 16px;
+  font-weight: 600;
+}
